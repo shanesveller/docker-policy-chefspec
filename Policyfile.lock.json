@@ -1,0 +1,109 @@
+{
+  "revision_id": "f538d5c639d7627cff1415a4a9b7100a8d4d07864f327469622daf06a0b017af",
+  "name": "docker-policy-chefspec",
+  "run_list": [
+    "recipe[apt::default]",
+    "recipe[docker-policy-chefspec::default]"
+  ],
+  "cookbook_locks": {
+    "docker-policy-chefspec": {
+      "version": "0.1.0",
+      "identifier": "1cefb6b2b51a1b076a06a9ae9c83cb62d3588d1f",
+      "dotted_decimal_identifier": "8144867309197851.2086901686115459.223625313029407",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "6f71b68d914d5598ac2cda56f5ebdc65288350d8",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/master"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    },
+    "compat_resource": {
+      "version": "12.7.3",
+      "identifier": "c23f509abbc40b6f466e8a23d6b0b23d21e2176d",
+      "dotted_decimal_identifier": "54675760907797515.31321162992834224.195975631214445",
+      "cache_key": "compat_resource-12.7.3-supermarket.chef.io",
+      "origin": "http://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.7.3/download",
+      "source_options": {
+        "artifactserver": "http://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.7.3/download",
+        "version": "12.7.3"
+      }
+    },
+    "docker": {
+      "version": "2.5.6",
+      "identifier": "163acedd5a3baa4a1e16518aa2b1016990301d8f",
+      "dotted_decimal_identifier": "6257109638986666.20862229482742449.1552902266255",
+      "cache_key": "docker-2.5.6-supermarket.chef.io",
+      "origin": "http://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/2.5.6/download",
+      "source_options": {
+        "artifactserver": "http://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/2.5.6/download",
+        "version": "2.5.6"
+      }
+    },
+    "apt": {
+      "version": "2.9.2",
+      "identifier": "aa7652cc9ec61ee4603d984cb5770169987ae0ea",
+      "dotted_decimal_identifier": "47980844033164830.64282112354465143.1553041383658",
+      "cache_key": "apt-2.9.2-supermarket.chef.io",
+      "origin": "http://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/2.9.2/download",
+      "source_options": {
+        "artifactserver": "http://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/2.9.2/download",
+        "version": "2.9.2"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "docker-policy-chefspec",
+        ">= 0.0.0"
+      ],
+      [
+        "compat_resource",
+        "= 12.7.3"
+      ],
+      [
+        "docker",
+        "= 2.5.6"
+      ],
+      [
+        "apt",
+        "= 2.9.2"
+      ]
+    ],
+    "dependencies": {
+      "apt (2.9.2)": [
+
+      ],
+      "compat_resource (12.7.3)": [
+
+      ],
+      "docker (2.5.6)": [
+        [
+          "compat_resource",
+          "~> 12.7.1"
+        ]
+      ],
+      "docker-policy-chefspec (0.1.0)": [
+        [
+          "docker",
+          ">= 0.0.0"
+        ]
+      ]
+    }
+  }
+}
