@@ -1,0 +1,16 @@
+machine:
+  environment:
+    CHEFDK_URL: https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chefdk_0.11.0-1_amd64.deb
+    CHEFDK_VERSION: 0.11.0
+dependencies:
+  override:
+    - mkdir -p $HOME/cache
+    - if [ ! -f $HOME/cache/chefdk-$CHEFDK_VERSION.deb ]; then curl -o $HOME/cache/chefdk-$CHEFDK_VERSION.deb $CHEFDK_URL; fi
+    - sudo dpkg -i $HOME/cache/chefdk-$CHEFDK_VERSION.deb
+    - chef exec bundle install
+  cache_directories:
+    - /home/ubuntu/.chefdk
+    - /home/ubuntu/cache
+test:
+  override:
+    - chef exec bundle exec rspec
